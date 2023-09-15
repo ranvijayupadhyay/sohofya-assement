@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .qwrapper{
+            display: flex;
+            width: 150px;
+            gap: 10px;
+        }
+    </style>
+
+  </head>
+  <body>
+    
+  
+    <nav class="navbar navbar-expand-md bg-success navbar-dark text-dark">
+      <div class="container">
+          <a class="navbar-brand" href="#">LOGO</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+            <ul class="navbar-nav text-dark">
+              <li class="nav-item ">
+                <a class="nav-link text-light" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Services</a>
+              </li>    
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Contact</a>
+              </li>    
+            </ul>
+          </div>  
+
+      </div>
+    </nav>
+
+      <section class="mt-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <img src="https://drinkjimmys.com/cdn/shop/files/wb-06_4311e9af-5e44-4d8a-a3e6-670720909343.jpg?v=1692180577&width=360" alt="" class="img-fluid">
+                    <p>
+                        <small>Preview</small>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h2>Product title 1</h2>
+                    <p><strong>Rs. 1000/-</strong></p>
+                    <p>
+                        <button class="btn btn-md btn-success">Add to Cart</button>
+                        <div class="qwrapper">
+                            <button class="btn btn-md btn-danger" id="decre_qty">
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                            </button>
+                            <input type="number" readonly id="p_qty" class="form-control" value="1">
+                            <button class="btn btn-md btn-danger" id="incre_qty">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </p>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus blanditiis perspiciatis nisi eaque aliquam porro natus quia autem sed nobis! Deserunt ratione animi vitae! Excepturi, deleniti vitae temporibus, sunt maxime mollitia officia dolore, magni quas ab iure laudantium dolor. Porro hic incidunt veniam voluptatum perspiciatis sunt facilis, in qui possimus!
+                    </p>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">  </script>
+    <script>
+
+    $(document).ready(function(){
+        $(document).on('click','#decre_qty',function(e){
+            e.preventDefault();
+            let qty=$('#p_qty').val();
+            qty=parseInt(qty)
+            if(qty>1){
+                qty-=1;
+            }
+            $('#p_qty').val(qty);
+        })
+        $(document).on('click','#incre_qty',function(e){
+            e.preventDefault();
+            let qty=$('#p_qty').val();            
+            qty=parseInt(qty)            
+            qty=qty+1;
+            $('#p_qty').val(qty);
+        })
+    });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
